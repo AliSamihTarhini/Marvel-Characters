@@ -14,6 +14,10 @@
 		BA8C4BE0295C3E3F002199C8 /* CharacterDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8C4BDE295C3E3F002199C8 /* CharacterDetailsCell.swift */; };
 		BA8C4BE1295C3E3F002199C8 /* CharacterDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA8C4BDF295C3E3F002199C8 /* CharacterDetailsCell.xib */; };
 		BA8C4BE4295C40BE002199C8 /* CharactersDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8C4BE3295C40BE002199C8 /* CharactersDetailsViewModel.swift */; };
+		BA8C4BE9295C5A47002199C8 /* SelectedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8C4BE7295C5A47002199C8 /* SelectedDetailViewController.swift */; };
+		BA8C4BEA295C5A47002199C8 /* SelectedDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA8C4BE8295C5A47002199C8 /* SelectedDetailViewController.xib */; };
+		BA8C4BED295C5C68002199C8 /* SelectedDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8C4BEB295C5C68002199C8 /* SelectedDetailCell.swift */; };
+		BA8C4BEE295C5C68002199C8 /* SelectedDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA8C4BEC295C5C68002199C8 /* SelectedDetailCell.xib */; };
 		BABD2C6B295AD93C0006D99E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABD2C6A295AD93C0006D99E /* AppDelegate.swift */; };
 		BABD2C6D295AD93C0006D99E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABD2C6C295AD93C0006D99E /* SceneDelegate.swift */; };
 		BABD2C6F295AD93C0006D99E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABD2C6E295AD93C0006D99E /* ViewController.swift */; };
@@ -65,6 +69,10 @@
 		BA8C4BDE295C3E3F002199C8 /* CharacterDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsCell.swift; sourceTree = "<group>"; };
 		BA8C4BDF295C3E3F002199C8 /* CharacterDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterDetailsCell.xib; sourceTree = "<group>"; };
 		BA8C4BE3295C40BE002199C8 /* CharactersDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersDetailsViewModel.swift; sourceTree = "<group>"; };
+		BA8C4BE7295C5A47002199C8 /* SelectedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedDetailViewController.swift; sourceTree = "<group>"; };
+		BA8C4BE8295C5A47002199C8 /* SelectedDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectedDetailViewController.xib; sourceTree = "<group>"; };
+		BA8C4BEB295C5C68002199C8 /* SelectedDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedDetailCell.swift; sourceTree = "<group>"; };
+		BA8C4BEC295C5C68002199C8 /* SelectedDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectedDetailCell.xib; sourceTree = "<group>"; };
 		BABD2C67295AD93C0006D99E /* Marvel Caracters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Marvel Caracters.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BABD2C6A295AD93C0006D99E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BABD2C6C295AD93C0006D99E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +164,25 @@
 			path = "App+Scene Delegate";
 			sourceTree = "<group>";
 		};
+		BA8C4BE6295C5A05002199C8 /* SelectedDetail */ = {
+			isa = PBXGroup;
+			children = (
+				BA8C4BEF295C5C6E002199C8 /* selectedDetailCollectionViewCell */,
+				BA8C4BE7295C5A47002199C8 /* SelectedDetailViewController.swift */,
+				BA8C4BE8295C5A47002199C8 /* SelectedDetailViewController.xib */,
+			);
+			path = SelectedDetail;
+			sourceTree = "<group>";
+		};
+		BA8C4BEF295C5C6E002199C8 /* selectedDetailCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				BA8C4BEB295C5C68002199C8 /* SelectedDetailCell.swift */,
+				BA8C4BEC295C5C68002199C8 /* SelectedDetailCell.xib */,
+			);
+			path = selectedDetailCollectionViewCell;
+			sourceTree = "<group>";
+		};
 		BABD2C5E295AD93C0006D99E = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +211,7 @@
 				BA8C4BE5295C40FD002199C8 /* App+Scene Delegate */,
 				BABD2C9A295AD9540006D99E /* MarvelCharacters */,
 				BA0B4E37295C2CF30074F337 /* CharacterDetails */,
+				BA8C4BE6295C5A05002199C8 /* SelectedDetail */,
 				BABD2C73295AD93F0006D99E /* Assets.xcassets */,
 				BABD2C70295AD93C0006D99E /* Main.storyboard */,
 				BABD2C75295AD93F0006D99E /* LaunchScreen.storyboard */,
@@ -355,10 +383,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA8C4BEA295C5A47002199C8 /* SelectedDetailViewController.xib in Resources */,
 				BAD81051295B0000004F5255 /* CharactersViewController.xib in Resources */,
 				BABD2C77295AD93F0006D99E /* LaunchScreen.storyboard in Resources */,
 				BABD2C74295AD93F0006D99E /* Assets.xcassets in Resources */,
 				BABD2C72295AD93C0006D99E /* Main.storyboard in Resources */,
+				BA8C4BEE295C5C68002199C8 /* SelectedDetailCell.xib in Resources */,
 				BA0B4E3B295C2D240074F337 /* CharacterDetails.xib in Resources */,
 				BA8C4BE1295C3E3F002199C8 /* CharacterDetailsCell.xib in Resources */,
 				BABD2CA7295ADD290006D99E /* MarvelCharactersCollectionViewCell.xib in Resources */,
@@ -490,8 +520,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAD81053295B29F0004F5255 /* Dynamic.swift in Sources */,
+				BA8C4BED295C5C68002199C8 /* SelectedDetailCell.swift in Sources */,
 				BABD2C6F295AD93C0006D99E /* ViewController.swift in Sources */,
 				BA0B4E3A295C2D240074F337 /* CharacterDetails.swift in Sources */,
+				BA8C4BE9295C5A47002199C8 /* SelectedDetailViewController.swift in Sources */,
 				BABD2C6B295AD93C0006D99E /* AppDelegate.swift in Sources */,
 				BABD2CAF295AE8E90006D99E /* MarvelCharactersData.swift in Sources */,
 				BABD2C6D295AD93C0006D99E /* SceneDelegate.swift in Sources */,
