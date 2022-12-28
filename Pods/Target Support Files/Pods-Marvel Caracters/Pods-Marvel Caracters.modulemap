@@ -1,0 +1,6 @@
+framework module Pods_Marvel_Caracters {
+  umbrella header "Pods-Marvel Caracters-umbrella.h"
+
+  export *
+  module * { export * }
+}
