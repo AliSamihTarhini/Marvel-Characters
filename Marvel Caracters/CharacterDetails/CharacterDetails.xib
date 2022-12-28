@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CharacterDetails" customModule="Marvel_Caracters" customModuleProvider="target">
             <connections>
+                <outlet property="detailsTabelView" destination="Lb3-5K-XRd" id="idq-7S-f0m"/>
+                <outlet property="titleLabel" destination="sUo-Mo-cZ1" id="Do0-K1-tHx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,13 +30,28 @@
                     <rect key="frame" x="15" y="122" width="360" height="688"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8O-Rm-MUk">
+                    <rect key="frame" x="345" y="77" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="K8F-YO-fEG"/>
+                        <constraint firstAttribute="width" constant="30" id="g6L-yc-2fb"/>
+                    </constraints>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="xmark" catalog="system"/>
+                    <connections>
+                        <action selector="backButtonPressed:" destination="-1" eventType="touchUpInside" id="x55-BV-rk4"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Lb3-5K-XRd" secondAttribute="trailing" constant="15" id="GWq-FY-V6M"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="e8O-Rm-MUk" secondAttribute="trailing" constant="15" id="NVk-Lg-6iT"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Lb3-5K-XRd" secondAttribute="bottom" id="cWH-aL-OUw"/>
                 <constraint firstItem="Lb3-5K-XRd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="ezI-Zj-6Wg"/>
+                <constraint firstItem="e8O-Rm-MUk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="jip-Ba-mGJ"/>
                 <constraint firstItem="sUo-Mo-cZ1" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="nZQ-MC-0zi"/>
                 <constraint firstItem="sUo-Mo-cZ1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="oXO-GB-i09"/>
                 <constraint firstItem="Lb3-5K-XRd" firstAttribute="top" secondItem="sUo-Mo-cZ1" secondAttribute="bottom" constant="15" id="ttD-p5-Ch2"/>
@@ -43,6 +60,7 @@
         </view>
     </objects>
     <resources>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

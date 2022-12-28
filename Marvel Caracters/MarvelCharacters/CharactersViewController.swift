@@ -25,6 +25,15 @@ class CharactersViewController: UIViewController {
         viewModel.finalArray.bind { [weak self] marChar in
         self?.reloadCollectionView()
         }
+        viewModel.navigateToDetailsVc = { [weak self] marChar in
+            if let currentView = self{
+                guard let marChar = marChar else { return }
+                let vc = CharacterDetails(nibName: "CharacterDetails", bundle: nil)
+                vc.viewModel.modelToRecieve = marChar
+                vc.modalPresentationStyle = .fullScreen
+                currentView.present(vc, animated: true)
+            }
+        }
     }
     
     private func reloadCollectionView(){
@@ -52,7 +61,9 @@ extension CharactersViewController: UICollectionViewDataSource{
     }
 }
 extension CharactersViewController: UICollectionViewDelegate{
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.didSelectRow(at: indexPath)
+    }
 }
 extension CharactersViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

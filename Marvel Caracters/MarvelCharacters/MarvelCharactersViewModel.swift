@@ -16,7 +16,7 @@ class MarvelCharactersViewModel {
     }
     
     var reloadCollectionView: (()->())?
-    
+    var navigateToDetailsVc: ((MarvelCharacters?)->())?
     
     func configureCell(cell: MarvelCharactersCollectionViewCell, at index: IndexPath ){
         let model = finalArray.value[index.row]
@@ -67,5 +67,11 @@ class MarvelCharactersViewModel {
             }
             
         }.resume()
+    }
+    
+    
+    func didSelectRow(at index: IndexPath){
+        let detailsToSend = finalArray.value[index.row]
+        self.navigateToDetailsVc?(detailsToSend)
     }
 }

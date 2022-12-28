@@ -11,6 +11,9 @@
 		363B449F5F9941714992EE50 /* Pods_Marvel_Caracters.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CA166551D30A35DFCED5B4B /* Pods_Marvel_Caracters.framework */; };
 		BA0B4E3A295C2D240074F337 /* CharacterDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0B4E38295C2D240074F337 /* CharacterDetails.swift */; };
 		BA0B4E3B295C2D240074F337 /* CharacterDetails.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA0B4E39295C2D240074F337 /* CharacterDetails.xib */; };
+		BA8C4BE0295C3E3F002199C8 /* CharacterDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8C4BDE295C3E3F002199C8 /* CharacterDetailsCell.swift */; };
+		BA8C4BE1295C3E3F002199C8 /* CharacterDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA8C4BDF295C3E3F002199C8 /* CharacterDetailsCell.xib */; };
+		BA8C4BE4295C40BE002199C8 /* CharactersDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8C4BE3295C40BE002199C8 /* CharactersDetailsViewModel.swift */; };
 		BABD2C6B295AD93C0006D99E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABD2C6A295AD93C0006D99E /* AppDelegate.swift */; };
 		BABD2C6D295AD93C0006D99E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABD2C6C295AD93C0006D99E /* SceneDelegate.swift */; };
 		BABD2C6F295AD93C0006D99E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABD2C6E295AD93C0006D99E /* ViewController.swift */; };
@@ -59,6 +62,9 @@
 		802608B2A678317AA7AE00B9 /* Pods-Marvel Caracters-Marvel CaractersUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel Caracters-Marvel CaractersUITests.release.xcconfig"; path = "Target Support Files/Pods-Marvel Caracters-Marvel CaractersUITests/Pods-Marvel Caracters-Marvel CaractersUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BA0B4E38295C2D240074F337 /* CharacterDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetails.swift; sourceTree = "<group>"; };
 		BA0B4E39295C2D240074F337 /* CharacterDetails.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterDetails.xib; sourceTree = "<group>"; };
+		BA8C4BDE295C3E3F002199C8 /* CharacterDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsCell.swift; sourceTree = "<group>"; };
+		BA8C4BDF295C3E3F002199C8 /* CharacterDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterDetailsCell.xib; sourceTree = "<group>"; };
+		BA8C4BE3295C40BE002199C8 /* CharactersDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersDetailsViewModel.swift; sourceTree = "<group>"; };
 		BABD2C67295AD93C0006D99E /* Marvel Caracters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Marvel Caracters.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BABD2C6A295AD93C0006D99E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BABD2C6C295AD93C0006D99E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,9 +131,29 @@
 			isa = PBXGroup;
 			children = (
 				BA0B4E38295C2D240074F337 /* CharacterDetails.swift */,
+				BA8C4BE3295C40BE002199C8 /* CharactersDetailsViewModel.swift */,
 				BA0B4E39295C2D240074F337 /* CharacterDetails.xib */,
+				BA8C4BE2295C3E46002199C8 /* TableViewCell */,
 			);
 			path = CharacterDetails;
+			sourceTree = "<group>";
+		};
+		BA8C4BE2295C3E46002199C8 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				BA8C4BDE295C3E3F002199C8 /* CharacterDetailsCell.swift */,
+				BA8C4BDF295C3E3F002199C8 /* CharacterDetailsCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		BA8C4BE5295C40FD002199C8 /* App+Scene Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				BABD2C6C295AD93C0006D99E /* SceneDelegate.swift */,
+				BABD2C6A295AD93C0006D99E /* AppDelegate.swift */,
+			);
+			path = "App+Scene Delegate";
 			sourceTree = "<group>";
 		};
 		BABD2C5E295AD93C0006D99E = {
@@ -155,14 +181,13 @@
 		BABD2C69295AD93C0006D99E /* Marvel Caracters */ = {
 			isa = PBXGroup;
 			children = (
+				BA8C4BE5295C40FD002199C8 /* App+Scene Delegate */,
 				BABD2C9A295AD9540006D99E /* MarvelCharacters */,
 				BA0B4E37295C2CF30074F337 /* CharacterDetails */,
-				BABD2C6A295AD93C0006D99E /* AppDelegate.swift */,
-				BABD2C6C295AD93C0006D99E /* SceneDelegate.swift */,
-				BABD2C6E295AD93C0006D99E /* ViewController.swift */,
-				BABD2C70295AD93C0006D99E /* Main.storyboard */,
 				BABD2C73295AD93F0006D99E /* Assets.xcassets */,
+				BABD2C70295AD93C0006D99E /* Main.storyboard */,
 				BABD2C75295AD93F0006D99E /* LaunchScreen.storyboard */,
+				BABD2C6E295AD93C0006D99E /* ViewController.swift */,
 				BABD2C78295AD93F0006D99E /* Info.plist */,
 				BAD81052295B29F0004F5255 /* Dynamic.swift */,
 			);
@@ -335,6 +360,7 @@
 				BABD2C74295AD93F0006D99E /* Assets.xcassets in Resources */,
 				BABD2C72295AD93C0006D99E /* Main.storyboard in Resources */,
 				BA0B4E3B295C2D240074F337 /* CharacterDetails.xib in Resources */,
+				BA8C4BE1295C3E3F002199C8 /* CharacterDetailsCell.xib in Resources */,
 				BABD2CA7295ADD290006D99E /* MarvelCharactersCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,8 +496,10 @@
 				BABD2CAF295AE8E90006D99E /* MarvelCharactersData.swift in Sources */,
 				BABD2C6D295AD93C0006D99E /* SceneDelegate.swift in Sources */,
 				BABD2CAD295AE3A90006D99E /* MarvelCharactersViewModel.swift in Sources */,
+				BA8C4BE0295C3E3F002199C8 /* CharacterDetailsCell.swift in Sources */,
 				BABD2CA9295ADFAE0006D99E /* MarvelCharactersModel.swift in Sources */,
 				BAD81050295B0000004F5255 /* CharactersViewController.swift in Sources */,
+				BA8C4BE4295C40BE002199C8 /* CharactersDetailsViewModel.swift in Sources */,
 				BABD2CA6295ADD290006D99E /* MarvelCharactersCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
