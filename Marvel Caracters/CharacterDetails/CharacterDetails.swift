@@ -17,8 +17,20 @@ class CharacterDetails: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setUpUI()
+        bindToViewModel()
     }
 
+    func bindToViewModel(){
+        viewModel.navigateToSelectedDetailsVc = { [weak self] myModel in
+            if let currentView = self{
+                guard let myModel = myModel else { return }
+                let vc = SelectedDetailViewController(nibName: "SelectedDetailViewController", bundle: nil)
+                vc.viewModel.modelToRecieve = myModel
+                vc.modalPresentationStyle = .fullScreen
+                currentView.present(vc, animated: true)
+            }
+        }
+    }
     private func setUpUI(){
         titleLabel.text = viewModel.modelToRecieve?.name
     }
@@ -26,17 +38,11 @@ class CharacterDetails: UIViewController {
         self.dismiss(animated: true)
     }
     
-    @IBAction func comicsButtonPressed(_ sender: UIButton) {
+    @IBAction func selectedDetailPressed(_ sender: UIButton) {
+        viewModel.didSelectButton(with: sender.tag)
     }
     
-    @IBAction func eventsButtonPressed(_ sender: UIButton) {
-    }
     
-    @IBAction func seriesButtonPressed(_ sender: UIButton) {
-    }
-    
-    @IBAction func storiesButtonPressed(_ sender: UIButton) {
-    }
     
     
     

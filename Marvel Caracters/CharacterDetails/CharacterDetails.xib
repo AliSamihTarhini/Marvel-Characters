@@ -35,7 +35,7 @@
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="xmark" catalog="system"/>
                     <connections>
-                        <action selector="backButtonPressed:" destination="-1" eventType="touchUpInside" id="x55-BV-rk4"/>
+                        <action selector="backButtonPressed:" destination="-1" eventType="touchUpInside" id="nBy-TH-dei"/>
                     </connections>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="EL9-pC-1hf">
@@ -51,10 +51,10 @@
                                 <color key="baseBackgroundColor" red="0.92929404973983765" green="0.39461930610835444" blue="0.3598062751374656" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </buttonConfiguration>
                             <connections>
-                                <action selector="comicsButtonPressed:" destination="-1" eventType="touchUpInside" id="MC5-32-K1u"/>
+                                <action selector="selectedDetailPressed:" destination="-1" eventType="touchUpInside" id="ipl-lu-TON"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OpS-t2-JJo">
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OpS-t2-JJo">
                             <rect key="frame" x="0.0" y="158.33333333333331" width="290" height="128.33333333333331"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="filled" title="Events" cornerStyle="large">
@@ -63,10 +63,10 @@
                                 <color key="baseBackgroundColor" red="0.92929404969999996" green="0.39461930610000001" blue="0.35980627510000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </buttonConfiguration>
                             <connections>
-                                <action selector="eventsButtonPressed:" destination="-1" eventType="touchUpInside" id="WnR-Y1-OeJ"/>
+                                <action selector="selectedDetailPressed:" destination="-1" eventType="touchUpInside" id="Fsy-Za-BwC"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YU8-uJ-s2q">
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YU8-uJ-s2q">
                             <rect key="frame" x="0.0" y="316.66666666666669" width="290" height="128"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="filled" title="Series" cornerStyle="large">
@@ -75,10 +75,10 @@
                                 <color key="baseBackgroundColor" red="0.92929404969999996" green="0.39461930610000001" blue="0.35980627510000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </buttonConfiguration>
                             <connections>
-                                <action selector="seriesButtonPressed:" destination="-1" eventType="touchUpInside" id="I9V-dr-3JF"/>
+                                <action selector="selectedDetailPressed:" destination="-1" eventType="touchUpInside" id="BGH-6a-lVr"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WVS-hv-oPH">
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WVS-hv-oPH">
                             <rect key="frame" x="0.0" y="474.66666666666657" width="290" height="128.33333333333331"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="filled" title="Stories" cornerStyle="large">
@@ -87,7 +87,7 @@
                                 <color key="baseBackgroundColor" red="0.92929404969999996" green="0.39461930610000001" blue="0.35980627510000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </buttonConfiguration>
                             <connections>
-                                <action selector="storiesButtonPressed:" destination="-1" eventType="touchUpInside" id="dyC-OW-ZQq"/>
+                                <action selector="selectedDetailPressed:" destination="-1" eventType="touchUpInside" id="2Z1-ge-LZF"/>
                             </connections>
                         </button>
                     </subviews>

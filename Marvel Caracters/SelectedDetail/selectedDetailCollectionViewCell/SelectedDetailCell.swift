@@ -17,4 +17,6 @@ class SelectedDetailCell: UICollectionViewCell {
         // Initialization code
     }
 
+    
+    
 }

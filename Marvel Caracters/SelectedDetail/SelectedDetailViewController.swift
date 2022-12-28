@@ -12,16 +12,22 @@ class SelectedDetailViewController: UIViewController {
     @IBOutlet weak var selectedLabel: UILabel!
     @IBOutlet weak var selectedDetailsCollectionView: UICollectionView!
     
+    let viewModel = SelectedDetailViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setUpCollectionView()
+        setUpUI()
     }
     
     private func setUpCollectionView(){
         selectedDetailsCollectionView.dataSource = self
         selectedDetailsCollectionView.delegate = self
         selectedDetailsCollectionView.register(UINib(nibName: "SelectedDetailCell", bundle: nil), forCellWithReuseIdentifier: "SelectedDetailCell")
+    }
+    func setUpUI(){
+        selectedLabel.text = "\(viewModel.modelToRecieve?.id)"
     }
     
     @IBAction func backButtonPressed(_ sender: UIButton) {
