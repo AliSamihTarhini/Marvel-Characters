@@ -9,7 +9,6 @@ import UIKit
 
 class CharacterDetails: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var detailsTabelView: UITableView!
     
     
     let viewModel = CharacterDetailsViewModel()
@@ -17,29 +16,28 @@ class CharacterDetails: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        setUpTableView()
+        setUpUI()
     }
-    
-    func setUpTableView(){
-        detailsTabelView.dataSource = self
-        detailsTabelView.delegate = self
-        detailsTabelView.register(UINib(nibName: "CharacterDetailsCell", bundle: nil), forCellReuseIdentifier: "CharacterDetailsCell")
+
+    private func setUpUI(){
+        titleLabel.text = viewModel.modelToRecieve?.name
     }
     @IBAction func backButtonPressed(_ sender: UIButton) {
         self.dismiss(animated: true)
     }
     
-}
-extension CharacterDetails: UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+    @IBAction func comicsButtonPressed(_ sender: UIButton) {
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let detailsCell = detailsTabelView.dequeueReusableCell(withIdentifier: "CharacterDetailsCell", for: indexPath) as! CharacterDetailsCell
-        return detailsCell
+    @IBAction func eventsButtonPressed(_ sender: UIButton) {
     }
-}
-extension CharacterDetails: UITableViewDelegate {
+    
+    @IBAction func seriesButtonPressed(_ sender: UIButton) {
+    }
+    
+    @IBAction func storiesButtonPressed(_ sender: UIButton) {
+    }
+    
+    
     
 }
