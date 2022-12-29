@@ -17,6 +17,10 @@ class SelectedDetailCell: UICollectionViewCell {
         // Initialization code
     }
 
-    
+    func setUpCell(model: SelectedDescModel){
+        selectedDescriptionLabel.text = model.name
+        selectedDescriptionImage.kf.setImage(with: URL(string: model.image))
+        
+    }
     
 }

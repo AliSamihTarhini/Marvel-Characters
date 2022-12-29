@@ -19,6 +19,7 @@ class SelectedDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
         setUpCollectionView()
         setUpUI()
+        viewModel.fetchSelectedDetail()
     }
     
     private func setUpCollectionView(){
@@ -27,7 +28,9 @@ class SelectedDetailViewController: UIViewController {
         selectedDetailsCollectionView.register(UINib(nibName: "SelectedDetailCell", bundle: nil), forCellWithReuseIdentifier: "SelectedDetailCell")
     }
     func setUpUI(){
-        selectedLabel.text = "\(viewModel.modelToRecieve?.id)"
+        if let model = viewModel.modelToRecieve?.tag{
+            selectedLabel.text = viewModel.checkSelectedDetail(modle: model)
+        }
     }
     
     @IBAction func backButtonPressed(_ sender: UIButton) {
