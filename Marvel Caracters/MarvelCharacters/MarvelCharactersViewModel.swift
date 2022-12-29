@@ -9,16 +9,16 @@ import Foundation
 
 class MarvelCharactersViewModel {
     let hashing = md5Formation()
-    var marvelCharactersData = Dynamic([MarvelCharacters]())
+    var marvelCharactersDataArray = Dynamic([MarvelCharacters]())
     var numberOfCharacters: Int {
-        return marvelCharactersData.value.count
+        return marvelCharactersDataArray.value.count
     }
     
     var reloadCollectionView: (()->())?
     var navigateToDetailsVc: ((MarvelCharacters?)->())?
     
     func configureCell(cell: MarvelCharactersCollectionViewCell, at index: IndexPath ){
-        let model = marvelCharactersData.value[index.row]
+        let model = marvelCharactersDataArray.value[index.row]
         cell.setUpCell(model: model)
     }
 
@@ -40,7 +40,7 @@ class MarvelCharactersViewModel {
                     let character = MarvelCharacters(id: decodedData.data.results[i].id, name: decodedData.data.results[i].name, image: "\(decodedData.data.results[i].thumbnail?.path ?? "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available").\(decodedData.data.results[i].thumbnail?.extension ?? "jpg")")
                     myArray.append(character)
                 }
-                self.marvelCharactersData.value = myArray
+                self.marvelCharactersDataArray.value = myArray
             }
             catch{
                 print(error)
@@ -51,7 +51,7 @@ class MarvelCharactersViewModel {
     
     
     func didSelectRow(at index: IndexPath){
-        let detailsToSend = marvelCharactersData.value[index.row]
+        let detailsToSend = marvelCharactersDataArray.value[index.row]
         self.navigateToDetailsVc?(detailsToSend)
     }
 }

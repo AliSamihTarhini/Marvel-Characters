@@ -11,6 +11,7 @@ import UIKit
 class CharactersViewController: UIViewController {
   
     @IBOutlet weak var charactersCollectionView: UICollectionView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     private let viewModel = MarvelCharactersViewModel()
     
@@ -20,6 +21,7 @@ class CharactersViewController: UIViewController {
         navigationItem.backButtonTitle = ""
         // Do any additional setup after loading the view.
         setUpCollectionView()
+        activityIndicator.startAnimating()
         viewModel.getMarvelCharacters()
         bindToViewModel()
     }
@@ -34,9 +36,10 @@ class CharactersViewController: UIViewController {
             vc.viewModel.modelToRecieve = marChar
         }
     }
-    
     private func reloadCollectionView(){
         DispatchQueue.main.async {
+            self.activityIndicator.startAnimating()
+            self.activityIndicator.isHidden = true
             self.charactersCollectionView.reloadData()
         }
     }
@@ -66,6 +69,6 @@ extension CharactersViewController: UICollectionViewDelegate{
 }
 extension CharactersViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 190, height: 200)
+        return CGSize(width: 190, height: 210)
     }
 }

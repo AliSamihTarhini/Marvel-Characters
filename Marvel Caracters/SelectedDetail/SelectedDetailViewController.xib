@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectedDetailViewController" customModule="Marvel_Caracters" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="Za1-vI-uuL" id="2ge-23-rfK"/>
                 <outlet property="selectedDetailsCollectionView" destination="gPe-Og-XSU" id="kvP-PZ-8sR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -19,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="gPe-Og-XSU">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="gPe-Og-XSU">
                     <rect key="frame" x="15" y="62" width="360" height="748"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AfO-Be-URx">
@@ -29,6 +30,15 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Za1-vI-uuL">
+                    <rect key="frame" x="155" y="382" width="80" height="80"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="DTE-Yc-7Uy"/>
+                        <constraint firstAttribute="height" constant="80" id="WaH-N3-CmA"/>
+                    </constraints>
+                    <color key="color" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -36,6 +46,8 @@
                 <constraint firstItem="gPe-Og-XSU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="EYR-4M-Nqi"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gPe-Og-XSU" secondAttribute="trailing" constant="15" id="KP7-Ju-Mg6"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="gPe-Og-XSU" secondAttribute="bottom" id="Zet-t3-owY"/>
+                <constraint firstItem="Za1-vI-uuL" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="fMn-yt-v2I"/>
+                <constraint firstItem="Za1-vI-uuL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="sFd-8z-cwf"/>
                 <constraint firstItem="gPe-Og-XSU" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="tO6-7w-gkU"/>
             </constraints>
             <point key="canvasLocation" x="23" y="21"/>

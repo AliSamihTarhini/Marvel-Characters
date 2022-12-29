@@ -10,12 +10,14 @@ import UIKit
 class SelectedDetailViewController: UIViewController {
 
     @IBOutlet weak var selectedDetailsCollectionView: UICollectionView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     let viewModel = SelectedDetailViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        activityIndicator.startAnimating()
         setUpCollectionView()
         setUpUI()
         viewModel.fetchSelectedDetail()
@@ -41,6 +43,8 @@ class SelectedDetailViewController: UIViewController {
     }
     private func reloadCollectionView(){
         DispatchQueue.main.async {
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.isHidden = true
             self.selectedDetailsCollectionView.reloadData()
         }
     }
@@ -66,6 +70,6 @@ extension SelectedDetailViewController: UICollectionViewDelegate {
 }
 extension SelectedDetailViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 190, height: 200)
+        return CGSize(width: 190, height: 210)
     }
 }
