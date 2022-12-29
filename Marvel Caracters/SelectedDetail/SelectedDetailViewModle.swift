@@ -12,15 +12,16 @@ import Foundation
 class SelectedDetailViewModel {
     
     var modelToRecieve: SelectedModel?
-    var finalArray = Dynamic([SelectedDescModel]())
+    var selectedDetailsDataArray = Dynamic([SelectedDescModel]())
     var numberOfDesc: Int {
-        return finalArray.value.count
+        return selectedDetailsDataArray.value.count
     }
+    let caller = APICalls()
     
     var reloadCollectionView: (()->())?
     
     func configureCell(cell: SelectedDetailCell, at index: IndexPath ){
-        let model = finalArray.value[index.row]
+        let model = selectedDetailsDataArray.value[index.row]
         cell.setUpCell(model: model)
     }
     
@@ -58,7 +59,7 @@ class SelectedDetailViewModel {
                 let decodedData = try JSONDecoder().decode(SelectedDescData.self, from: data)
                 var myArray: [SelectedDescModel] = []
                 for i in 0..<decodedData.data.results.count{
-                    let selectedDesc = SelectedDescModel(name: decodedData.data.results[i].title, image: "\(decodedData.data.results[i].thumbnail.path).\(decodedData.data.results[i].thumbnail.extension)")
+                    let selectedDesc = SelectedDescModel(name: decodedData.data.results[i].title, image: "\(decodedData.data.results[i].thumbnail?.path ?? "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available").\(decodedData.data.results[i].thumbnail?.extension ?? "jpg")")
                     myArray.append(selectedDesc)
                 }
                 self.checkUpIfNull(array: myArray)
@@ -66,16 +67,15 @@ class SelectedDetailViewModel {
             catch{
                 print(error)
             }
-            
         }.resume()
     }
     func checkUpIfNull(array: [SelectedDescModel]){
         if array.isEmpty {
             let defaultData = SelectedDescModel(name: "No Data", image: "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg")
-            finalArray.value = [defaultData]
+            selectedDetailsDataArray.value = [defaultData]
         }
         else{
-            finalArray.value = array
+            selectedDetailsDataArray.value = array
         }
     }
 }

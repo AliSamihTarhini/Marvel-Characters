@@ -16,6 +16,9 @@ class SelectedDetailCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        selectedDescriptionImage.layer.cornerRadius = 15
+//        selectedDescriptionImage.layer.borderWidth = 1
+//        selectedDescriptionImage.layer.borderColor = UIColor.black.cgColor
     }
 
     func setUpCell(model: SelectedDescModel){

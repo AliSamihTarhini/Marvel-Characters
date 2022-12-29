@@ -20,6 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         let navVC = UINavigationController(rootViewController: CharactersViewController())
+        navVC.navigationBar.prefersLargeTitles = true
+        navVC.navigationBar.tintColor = .black
         window.rootViewController = navVC
         window.makeKeyAndVisible()
         self.window = window

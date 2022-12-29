@@ -9,16 +9,16 @@ import Foundation
 
 class MarvelCharactersViewModel {
     let hashing = md5Formation()
-    var finalArray = Dynamic([MarvelCharacters]())
+    var marvelCharactersData = Dynamic([MarvelCharacters]())
     var numberOfCharacters: Int {
-        return finalArray.value.count
+        return marvelCharactersData.value.count
     }
     
     var reloadCollectionView: (()->())?
     var navigateToDetailsVc: ((MarvelCharacters?)->())?
     
     func configureCell(cell: MarvelCharactersCollectionViewCell, at index: IndexPath ){
-        let model = finalArray.value[index.row]
+        let model = marvelCharactersData.value[index.row]
         cell.setUpCell(model: model)
     }
 
@@ -37,11 +37,10 @@ class MarvelCharactersViewModel {
                 let decodedData = try JSONDecoder().decode(MarvelCharctersData.self, from: data)
                 var myArray: [MarvelCharacters] = []
                 for i in 0..<decodedData.data.results.count{
-                    let character = MarvelCharacters(id: decodedData.data.results[i].id, name: decodedData.data.results[i].name, image: "\(decodedData.data.results[i].thumbnail.path).\(decodedData.data.results[i].thumbnail.extension)")
+                    let character = MarvelCharacters(id: decodedData.data.results[i].id, name: decodedData.data.results[i].name, image: "\(decodedData.data.results[i].thumbnail?.path ?? "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available").\(decodedData.data.results[i].thumbnail?.extension ?? "jpg")")
                     myArray.append(character)
                 }
-                self.finalArray.value = myArray
-                print(self.finalArray.value)
+                self.marvelCharactersData.value = myArray
             }
             catch{
                 print(error)
@@ -52,7 +51,7 @@ class MarvelCharactersViewModel {
     
     
     func didSelectRow(at index: IndexPath){
-        let detailsToSend = finalArray.value[index.row]
+        let detailsToSend = marvelCharactersData.value[index.row]
         self.navigateToDetailsVc?(detailsToSend)
     }
 }

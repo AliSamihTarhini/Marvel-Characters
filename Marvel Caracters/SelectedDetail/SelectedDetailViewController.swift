@@ -9,7 +9,6 @@ import UIKit
 
 class SelectedDetailViewController: UIViewController {
 
-    @IBOutlet weak var selectedLabel: UILabel!
     @IBOutlet weak var selectedDetailsCollectionView: UICollectionView!
     
     let viewModel = SelectedDetailViewModel()
@@ -30,12 +29,13 @@ class SelectedDetailViewController: UIViewController {
     }
     func setUpUI(){
         if let model = viewModel.modelToRecieve?.tag{
-            selectedLabel.text = viewModel.checkSelectedDetail(modle: model)
+            self.title = viewModel.checkSelectedDetail(modle: model)
+            navigationItem.backButtonTitle = ""
         }
     }
     
     func bindToViewModel(){
-        viewModel.finalArray.bind { [weak self] selectedDesc in
+        viewModel.selectedDetailsDataArray.bind { [weak self] selectedDesc in
             self?.reloadCollectionView()
         }
     }

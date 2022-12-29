@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,40 +17,41 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zeo-HW-vZU">
-                        <rect key="frame" x="10.666666666666671" y="5" width="170" height="170"/>
+                        <rect key="frame" x="10" y="5" width="170" height="170"/>
                         <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="170" id="ABF-8z-Ffq"/>
                             <constraint firstAttribute="width" constant="170" id="a2r-Oa-NKu"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="layer.shadowOpacity" value="0.1"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="layer.shadowRadius" value="15"/>
+                        </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1p-k6-UmT">
-                        <rect key="frame" x="77" y="180" width="37.333333333333343" height="18"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <rect key="frame" x="10" y="180" width="171" height="15.666666666666657"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <color key="backgroundColor" systemColor="systemGray6Color"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="Zeo-HW-vZU" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="ECU-KO-EwT"/>
                 <constraint firstItem="a1p-k6-UmT" firstAttribute="top" secondItem="Zeo-HW-vZU" secondAttribute="bottom" constant="5" id="Fa5-2L-1JR"/>
+                <constraint firstItem="Zeo-HW-vZU" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="OkD-ds-moM"/>
+                <constraint firstItem="a1p-k6-UmT" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="V2z-Ex-ZdJ"/>
+                <constraint firstItem="a1p-k6-UmT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="hOL-2i-sut"/>
                 <constraint firstItem="Zeo-HW-vZU" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="m4f-nE-oYA"/>
-                <constraint firstItem="a1p-k6-UmT" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="q8B-o1-4pb"/>
             </constraints>
             <size key="customSize" width="191" height="218"/>
             <connections>
                 <outlet property="imageCell" destination="Zeo-HW-vZU" id="8Zs-dW-Xu4"/>
                 <outlet property="labelCell" destination="a1p-k6-UmT" id="uEk-zV-JM8"/>
             </connections>
-            <point key="canvasLocation" x="339.23076923076923" y="-61.137440758293835"/>
+            <point key="canvasLocation" x="238" y="-146"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>

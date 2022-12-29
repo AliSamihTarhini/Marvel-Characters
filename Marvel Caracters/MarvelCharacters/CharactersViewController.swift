@@ -16,23 +16,22 @@ class CharactersViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Marvel Characters"
+        navigationItem.backButtonTitle = ""
         // Do any additional setup after loading the view.
         setUpCollectionView()
         viewModel.getMarvelCharacters()
         bindToViewModel()
     }
     func bindToViewModel(){
-        viewModel.finalArray.bind { [weak self] marChar in
-        self?.reloadCollectionView()
+        viewModel.marvelCharactersDataArray.bind { [weak self] marChar in
+            self?.reloadCollectionView()
         }
         viewModel.navigateToDetailsVc = { [weak self] marChar in
-            if let currentView = self{
-                guard let marChar = marChar else { return }
-                let vc = CharacterDetails(nibName: "CharacterDetails", bundle: nil)
-                vc.viewModel.modelToRecieve = marChar
-                vc.modalPresentationStyle = .fullScreen
-                currentView.present(vc, animated: true)
-            }
+            guard let marChar = marChar else { return }
+            let vc = CharacterDetails(nibName: "CharacterDetails", bundle: nil)
+            self?.navigationController?.pushViewController(vc, animated: true)
+            vc.viewModel.modelToRecieve = marChar
         }
     }
     

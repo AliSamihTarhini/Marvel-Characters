@@ -8,7 +8,6 @@
 import UIKit
 
 class CharacterDetails: UIViewController {
-    @IBOutlet weak var titleLabel: UILabel!
     
     
     let viewModel = CharacterDetailsViewModel()
@@ -22,28 +21,18 @@ class CharacterDetails: UIViewController {
 
     func bindToViewModel(){
         viewModel.navigateToSelectedDetailsVc = { [weak self] myModel in
-            if let currentView = self{
-                guard let myModel = myModel else { return }
-                let vc = SelectedDetailViewController(nibName: "SelectedDetailViewController", bundle: nil)
-                vc.viewModel.modelToRecieve = myModel
-                vc.modalPresentationStyle = .fullScreen
-                currentView.present(vc, animated: true)
-            }
+            guard let myModel = myModel else { return }
+            let vc = SelectedDetailViewController(nibName: "SelectedDetailViewController", bundle: nil)
+            vc.viewModel.modelToRecieve = myModel
+            self?.navigationController?.pushViewController(vc, animated: true)
         }
     }
     private func setUpUI(){
-        titleLabel.text = viewModel.modelToRecieve?.name
-    }
-    @IBAction func backButtonPressed(_ sender: UIButton) {
-        self.dismiss(animated: true)
+        self.title = viewModel.modelToRecieve?.name
+        self.navigationItem.backButtonTitle = ""
     }
     
     @IBAction func selectedDetailPressed(_ sender: UIButton) {
         viewModel.didSelectButton(with: sender.tag)
     }
-    
-    
-    
-    
-    
 }

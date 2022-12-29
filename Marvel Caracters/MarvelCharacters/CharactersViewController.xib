@@ -19,14 +19,8 @@
             <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marvel Characters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nwB-Ns-53u">
-                    <rect key="frame" x="15" y="77" width="223.66666666666666" height="30"/>
-                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
-                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="kTY-Pd-e9i">
-                    <rect key="frame" x="15" y="122" width="360" height="688"/>
+                    <rect key="frame" x="15" y="63" width="360" height="747"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sZl-hx-O5v">
                         <size key="itemSize" width="128" height="128"/>
@@ -40,11 +34,9 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="kTY-Pd-e9i" secondAttribute="bottom" id="3fa-0Y-ulP"/>
-                <constraint firstItem="kTY-Pd-e9i" firstAttribute="top" secondItem="nwB-Ns-53u" secondAttribute="bottom" constant="15" id="gPL-Zd-Rsg"/>
+                <constraint firstItem="kTY-Pd-e9i" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="cj3-V0-Dyb"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kTY-Pd-e9i" secondAttribute="trailing" constant="15" id="hEE-4p-e8S"/>
-                <constraint firstItem="nwB-Ns-53u" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="m5s-3S-F8Y"/>
                 <constraint firstItem="kTY-Pd-e9i" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="mYp-Qi-cwG"/>
-                <constraint firstItem="nwB-Ns-53u" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="z38-sb-Ket"/>
             </constraints>
             <point key="canvasLocation" x="-15" y="21"/>
         </view>

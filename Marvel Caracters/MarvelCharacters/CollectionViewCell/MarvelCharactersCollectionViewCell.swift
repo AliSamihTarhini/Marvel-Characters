@@ -15,6 +15,9 @@ class MarvelCharactersCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        imageCell.layer.cornerRadius = 15
+        imageCell.layer.borderWidth = 1
+        imageCell.layer.borderColor = UIColor.black.cgColor
     }
 
     

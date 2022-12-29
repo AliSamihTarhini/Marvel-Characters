@@ -9,13 +9,13 @@ import Foundation
 
 
 struct SelectedDescData: Codable {
-    let data: Data2
+    let data: DescData
 }
-struct Data2: Codable{
-    let results: [Results2]
+struct DescData: Codable{
+    let results: [DescResult]
 }
-struct Results2: Codable{
+struct DescResult: Codable{
     let id: Int
     let title: String
-    let thumbnail: Thumbnail
+    let thumbnail: Thumbnail?
 }
