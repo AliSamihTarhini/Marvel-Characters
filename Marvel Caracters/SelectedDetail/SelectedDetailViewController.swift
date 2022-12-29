@@ -20,6 +20,7 @@ class SelectedDetailViewController: UIViewController {
         setUpCollectionView()
         setUpUI()
         viewModel.fetchSelectedDetail()
+        bindToViewModel()
     }
     
     private func setUpCollectionView(){
@@ -33,6 +34,17 @@ class SelectedDetailViewController: UIViewController {
         }
     }
     
+    func bindToViewModel(){
+        viewModel.finalArray.bind { [weak self] selectedDesc in
+            self?.reloadCollectionView()
+        }
+    }
+    private func reloadCollectionView(){
+        DispatchQueue.main.async {
+            self.selectedDetailsCollectionView.reloadData()
+        }
+    }
+    
     @IBAction func backButtonPressed(_ sender: UIButton) {
         self.dismiss(animated: true)
     }
@@ -40,11 +52,12 @@ class SelectedDetailViewController: UIViewController {
 }
 extension SelectedDetailViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return viewModel.numberOfDesc
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = selectedDetailsCollectionView.dequeueReusableCell(withReuseIdentifier: "SelectedDetailCell", for: indexPath) as! SelectedDetailCell
+        viewModel.configureCell(cell: cell, at: indexPath)
         return cell
     }
 }

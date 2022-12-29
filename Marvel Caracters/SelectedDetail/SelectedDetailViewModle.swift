@@ -12,6 +12,17 @@ import Foundation
 class SelectedDetailViewModel {
     
     var modelToRecieve: SelectedModel?
+    var finalArray = Dynamic([SelectedDescModel]())
+    var numberOfDesc: Int {
+        return finalArray.value.count
+    }
+    
+    var reloadCollectionView: (()->())?
+    
+    func configureCell(cell: SelectedDetailCell, at index: IndexPath ){
+        let model = finalArray.value[index.row]
+        cell.setUpCell(model: model)
+    }
     
     let hashing = md5Formation()
     let baseUrl = "https://gateway.marvel.com/v1/public/characters/"
@@ -50,7 +61,7 @@ class SelectedDetailViewModel {
                     let selectedDesc = SelectedDescModel(name: decodedData.data.results[i].title, image: "\(decodedData.data.results[i].thumbnail.path).\(decodedData.data.results[i].thumbnail.extension)")
                     myArray.append(selectedDesc)
                 }
-                print(myArray)
+                self.checkUpIfNull(array: myArray)
             }
             catch{
                 print(error)
@@ -58,5 +69,13 @@ class SelectedDetailViewModel {
             
         }.resume()
     }
-    
+    func checkUpIfNull(array: [SelectedDescModel]){
+        if array.isEmpty {
+            let defaultData = SelectedDescModel(name: "No Data", image: "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg")
+            finalArray.value = [defaultData]
+        }
+        else{
+            finalArray.value = array
+        }
+    }
 }
