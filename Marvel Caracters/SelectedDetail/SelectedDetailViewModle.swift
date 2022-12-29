@@ -15,9 +15,7 @@ class SelectedDetailViewModel {
     var selectedDetailsDataArray = Dynamic([SelectedDescModel]())
     var numberOfDesc: Int {
         return selectedDetailsDataArray.value.count
-    }
-    let caller = APICalls()
-    
+    }    
     var reloadCollectionView: (()->())?
     
     func configureCell(cell: SelectedDetailCell, at index: IndexPath ){
