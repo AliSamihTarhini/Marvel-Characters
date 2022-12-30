@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="gPe-Og-XSU">
-                    <rect key="frame" x="15" y="62" width="360" height="748"/>
+                    <rect key="frame" x="15" y="47" width="360" height="763"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AfO-Be-URx">
                         <size key="itemSize" width="128" height="128"/>
@@ -48,7 +48,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="gPe-Og-XSU" secondAttribute="bottom" id="Zet-t3-owY"/>
                 <constraint firstItem="Za1-vI-uuL" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="fMn-yt-v2I"/>
                 <constraint firstItem="Za1-vI-uuL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="sFd-8z-cwf"/>
-                <constraint firstItem="gPe-Og-XSU" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="tO6-7w-gkU"/>
+                <constraint firstItem="gPe-Og-XSU" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="tO6-7w-gkU"/>
             </constraints>
             <point key="canvasLocation" x="23" y="21"/>
         </view>

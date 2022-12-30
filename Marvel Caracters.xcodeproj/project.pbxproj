@@ -17,6 +17,8 @@
 		BA37995D295DB637003CF21D /* Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA37995C295DB637003CF21D /* Thumbnail.swift */; };
 		BA379960295DB694003CF21D /* DescData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA37995F295DB694003CF21D /* DescData.swift */; };
 		BA379962295DB6AF003CF21D /* DescResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA379961295DB6AF003CF21D /* DescResult.swift */; };
+		BA379964295DBCE2003CF21D /* ServiceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA379963295DBCE2003CF21D /* ServiceLayer.swift */; };
+		BA379967295DCFC1003CF21D /* APIUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA379966295DCFC1003CF21D /* APIUrl.swift */; };
 		BA421D55295C6C2F00B2409B /* SelectedDetailViewModle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA421D54295C6C2F00B2409B /* SelectedDetailViewModle.swift */; };
 		BA421D57295C6CE300B2409B /* SelectedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA421D56295C6CE300B2409B /* SelectedModel.swift */; };
 		BA421D59295C7FDE00B2409B /* SelectedDescModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA421D58295C7FDE00B2409B /* SelectedDescModel.swift */; };
@@ -80,6 +82,8 @@
 		BA37995C295DB637003CF21D /* Thumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thumbnail.swift; sourceTree = "<group>"; };
 		BA37995F295DB694003CF21D /* DescData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescData.swift; sourceTree = "<group>"; };
 		BA379961295DB6AF003CF21D /* DescResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescResult.swift; sourceTree = "<group>"; };
+		BA379963295DBCE2003CF21D /* ServiceLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLayer.swift; sourceTree = "<group>"; };
+		BA379966295DCFC1003CF21D /* APIUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUrl.swift; sourceTree = "<group>"; };
 		BA421D54295C6C2F00B2409B /* SelectedDetailViewModle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedDetailViewModle.swift; sourceTree = "<group>"; };
 		BA421D56295C6CE300B2409B /* SelectedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedModel.swift; sourceTree = "<group>"; };
 		BA421D58295C7FDE00B2409B /* SelectedDescModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedDescModel.swift; sourceTree = "<group>"; };
@@ -183,6 +187,15 @@
 			path = "Selected Description Data";
 			sourceTree = "<group>";
 		};
+		BA379965295DCF92003CF21D /* ServiceLayer */ = {
+			isa = PBXGroup;
+			children = (
+				BA379963295DBCE2003CF21D /* ServiceLayer.swift */,
+				BA379966295DCFC1003CF21D /* APIUrl.swift */,
+			);
+			path = ServiceLayer;
+			sourceTree = "<group>";
+		};
 		BA8C4BE5295C40FD002199C8 /* App+Scene Delegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +256,7 @@
 				BABD2C9A295AD9540006D99E /* MarvelCharacters */,
 				BA0B4E37295C2CF30074F337 /* CharacterDetails */,
 				BA8C4BE6295C5A05002199C8 /* SelectedDetail */,
+				BA379965295DCF92003CF21D /* ServiceLayer */,
 				BABD2C73295AD93F0006D99E /* Assets.xcassets */,
 				BABD2C70295AD93C0006D99E /* Main.storyboard */,
 				BABD2C75295AD93F0006D99E /* LaunchScreen.storyboard */,
@@ -565,10 +579,12 @@
 				BA421D57295C6CE300B2409B /* SelectedModel.swift in Sources */,
 				BA379958295DB5CA003CF21D /* CharacterData.swift in Sources */,
 				BABD2C6D295AD93C0006D99E /* SceneDelegate.swift in Sources */,
+				BA379967295DCFC1003CF21D /* APIUrl.swift in Sources */,
 				BABD2CAD295AE3A90006D99E /* MarvelCharactersViewModel.swift in Sources */,
 				BA37995B295DB619003CF21D /* Results.swift in Sources */,
 				BABD2CA9295ADFAE0006D99E /* MarvelCharactersModel.swift in Sources */,
 				BA421D5B295C818500B2409B /* SelectedDescData.swift in Sources */,
+				BA379964295DBCE2003CF21D /* ServiceLayer.swift in Sources */,
 				BAD81050295B0000004F5255 /* CharactersViewController.swift in Sources */,
 				BA8C4BE4295C40BE002199C8 /* CharactersDetailsViewModel.swift in Sources */,
 				BABD2CA6295ADD290006D99E /* MarvelCharactersCollectionViewCell.swift in Sources */,

@@ -9,22 +9,24 @@ import UIKit
 
 
 class CharactersViewController: UIViewController {
-  
+  //MARK: - IBOutlet -
     @IBOutlet weak var charactersCollectionView: UICollectionView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
+    //MARK: - ViewModel decleration -
     private let viewModel = MarvelCharactersViewModel()
-    
+    //MARK: - ViewDidLoad -
     override func viewDidLoad() {
         super.viewDidLoad()
+        bindToViewModel()
         self.title = "Marvel Characters"
         navigationItem.backButtonTitle = ""
         // Do any additional setup after loading the view.
         setUpCollectionView()
         activityIndicator.startAnimating()
         viewModel.getMarvelCharacters()
-        bindToViewModel()
+        
     }
+    //MARK: - binding func -
     func bindToViewModel(){
         viewModel.marvelCharactersDataArray.bind { [weak self] marChar in
             self?.reloadCollectionView()
@@ -35,11 +37,18 @@ class CharactersViewController: UIViewController {
             self?.navigationController?.pushViewController(vc, animated: true)
             vc.viewModel.modelToRecieve = marChar
         }
+        
+        viewModel.hideIndicator = { [weak self] in
+            guard let self = self else {return}
+            DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
+                self.activityIndicator.isHidden = true
+            }
+            
+        }
     }
     private func reloadCollectionView(){
         DispatchQueue.main.async {
-            self.activityIndicator.startAnimating()
-            self.activityIndicator.isHidden = true
             self.charactersCollectionView.reloadData()
         }
     }
@@ -51,6 +60,7 @@ class CharactersViewController: UIViewController {
     }
 
 }
+//MARK: - collectionView dataSource -
 extension CharactersViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.numberOfCharacters
@@ -62,11 +72,13 @@ extension CharactersViewController: UICollectionViewDataSource{
         return charactersCell
     }
 }
+//MARK: - CollectionView delegate -
 extension CharactersViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         viewModel.didSelectRow(at: indexPath)
     }
 }
+//MARK: - CollectionViewDelegateFlowLayout -
 extension CharactersViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 190, height: 210)

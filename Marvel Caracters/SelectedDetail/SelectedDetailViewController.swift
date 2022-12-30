@@ -8,52 +8,57 @@
 import UIKit
 
 class SelectedDetailViewController: UIViewController {
-
+    //MARK: - IBOutlets -
     @IBOutlet weak var selectedDetailsCollectionView: UICollectionView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
+    //MARK: - viewModel decleration -
     let viewModel = SelectedDetailViewModel()
-    
+    //MARK: - ViewDidLoad -
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        bindToViewModel()
         activityIndicator.startAnimating()
         setUpCollectionView()
         setUpUI()
         viewModel.fetchSelectedDetail()
-        bindToViewModel()
+        
     }
-    
+    //MARK: - functions -
     private func setUpCollectionView(){
         selectedDetailsCollectionView.dataSource = self
         selectedDetailsCollectionView.delegate = self
         selectedDetailsCollectionView.register(UINib(nibName: "SelectedDetailCell", bundle: nil), forCellWithReuseIdentifier: "SelectedDetailCell")
     }
-    func setUpUI(){
+    private func setUpUI(){
         if let model = viewModel.modelToRecieve?.tag{
             self.title = viewModel.checkSelectedDetail(modle: model)
             navigationItem.backButtonTitle = ""
         }
     }
-    
+    //MARK: - binding func -
     func bindToViewModel(){
         viewModel.selectedDetailsDataArray.bind { [weak self] selectedDesc in
             self?.reloadCollectionView()
         }
+        viewModel.hideIndicator = { [weak self] in
+            guard let self = self else {return}
+            DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
+                self.activityIndicator.isHidden = true
+            }
+            
+        }
     }
     private func reloadCollectionView(){
         DispatchQueue.main.async {
-            self.activityIndicator.stopAnimating()
-            self.activityIndicator.isHidden = true
             self.selectedDetailsCollectionView.reloadData()
         }
-    }
-    
-    @IBAction func backButtonPressed(_ sender: UIButton) {
-        self.dismiss(animated: true)
+        
     }
     
 }
+//MARK: - CollectionView DataSource -
 extension SelectedDetailViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.numberOfDesc
@@ -65,9 +70,7 @@ extension SelectedDetailViewController : UICollectionViewDataSource {
         return cell
     }
 }
-extension SelectedDetailViewController: UICollectionViewDelegate {
-    
-}
+//MARK: - CollectionViewDelegateFlowLayout -
 extension SelectedDetailViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 190, height: 210)
