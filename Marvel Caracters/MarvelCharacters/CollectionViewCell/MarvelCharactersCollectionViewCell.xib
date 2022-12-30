@@ -17,12 +17,8 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zeo-HW-vZU">
-                        <rect key="frame" x="10" y="5" width="170" height="170"/>
+                        <rect key="frame" x="10" y="5" width="171" height="184.33333333333334"/>
                         <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="170" id="ABF-8z-Ffq"/>
-                            <constraint firstAttribute="width" constant="170" id="a2r-Oa-NKu"/>
-                        </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
                             <userDefinedRuntimeAttribute type="string" keyPath="layer.shadowOpacity" value="0.1"/>
@@ -30,7 +26,7 @@
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1p-k6-UmT">
-                        <rect key="frame" x="10" y="180" width="171" height="15.666666666666657"/>
+                        <rect key="frame" x="10" y="194.33333333333334" width="171" height="15.666666666666657"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -40,9 +36,11 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="Zeo-HW-vZU" secondAttribute="trailing" constant="10" id="Ast-7y-1sP"/>
                 <constraint firstItem="a1p-k6-UmT" firstAttribute="top" secondItem="Zeo-HW-vZU" secondAttribute="bottom" constant="5" id="Fa5-2L-1JR"/>
                 <constraint firstItem="Zeo-HW-vZU" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="OkD-ds-moM"/>
                 <constraint firstItem="a1p-k6-UmT" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="V2z-Ex-ZdJ"/>
+                <constraint firstAttribute="bottom" secondItem="a1p-k6-UmT" secondAttribute="bottom" constant="8" id="XRe-DF-GNP"/>
                 <constraint firstItem="a1p-k6-UmT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="hOL-2i-sut"/>
                 <constraint firstItem="Zeo-HW-vZU" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="m4f-nE-oYA"/>
             </constraints>
