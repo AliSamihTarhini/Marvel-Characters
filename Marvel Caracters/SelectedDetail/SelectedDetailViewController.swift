@@ -73,6 +73,8 @@ extension SelectedDetailViewController : UICollectionViewDataSource {
 //MARK: - CollectionViewDelegateFlowLayout -
 extension SelectedDetailViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 190, height: 210)
+        let width = (collectionView.frame.width / 2 ) - 10
+        let height: CGFloat = 210
+        return CGSize(width: width, height: height)
     }
 }

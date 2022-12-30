@@ -44,7 +44,6 @@ class CharactersViewController: UIViewController {
                 self.activityIndicator.stopAnimating()
                 self.activityIndicator.isHidden = true
             }
-            
         }
     }
     private func reloadCollectionView(){
