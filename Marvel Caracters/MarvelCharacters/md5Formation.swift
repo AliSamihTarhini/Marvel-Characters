@@ -8,7 +8,7 @@
 import Foundation
 import CommonCrypto
 
-struct md5Formation{
+class md5Formation{
     let ts = "ali"
     let priKey = "15285456da938814aee4878ad7db5647706244b7"
     let pubKey = "f9b05d4f16c29186b37f36e297edb0d3"
